@@ -1,0 +1,87 @@
+aplication.add_handler(CommandHandler("dni", dni))
+aplication.add_handler(CommandHandler("dnit", dnit))
+aplication.add_handler(CommandHandler("dnig", dnig))
+
+# ========================================
+# COMANDO SUNEDU (DESACTIVADO)
+# ========================================
+
+async def sunedu(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    user_id = update.effective_user.id
+
+    # Validar argumentos
+    if len(context.args) != 1:
+        await update.message.reply_text(
+            "❗ <b>Uso correcto:</b>\n"
+            "/sunedu <code>dni</code>\n"
+            "Ejemplo: <code>/sunedu 12345678</code>", parse_mode="HTML", reply_to_message_id=update.message.message_id
+        )
+        return
+
+    # Verificar créditos
+    if not await verifica_creditos(update, user_id, 'vip_sunedu'):
+        return
+
+    dni = context.args[0]
+
+    # Mensaje de carga
+    loading_message = await update.message.reply_photo( photo="TRONCHITOBOT.png", caption="[⏳] PROCESANDO SOLICITUD EN SUNEDU.....", parse_mode="HTML", reply_to_message_id=update.message.message_id
+    )
+
+    url = f"http://127.0.0.1:8002/personas/{dni}"
+
+    try:
+        response = requests.get(url, timeout=30)
+
+        if response.status_code == 200:
+            data = response.json()
+
+            # Normalizamos la respuesta
+            if isinstance(data, list):
+                lista = data
+            elif isinstance(data, dict):
+                lista = data.get("listaAni", [])
+            else:
+                lista = []
+
+            # Procesar resultados
+            if lista:
+                for idx, d in enumerate(lista, 1):
+                    mensaje = (
+                        f"{bold('[#TRONCHITOBOT] ➾ SUNEDU X DNI')}\n\n"
+                        f"{EMOJIS['search']} {bold('SUNEDU - DNI')} {italic(f'Resultado #{idx}')}\n"
+                        f"🪪 {bold('Tipo de Documento:')} {safe_field(d.get('TIPDOC'))}\n"
+                        f"🔢 {bold('Número de Documento:')} {safe_field(d.get('NUMDOC'))}\n"
+                        f"🧑 {bold('Nombres:')} {safe_field(d.get('NOMBRES'))}\n"
+                        f"👨 {bold('Apellido Paterno:')} {safe_field(d.get('PATERNO'))}\n"
+                        f"👩 {bold('Apellido Materno:')} {safe_field(d.get('MATERNO'))}\n"
+                        f"🏫 {bold('Institución:')} {safe_field(d.get('NOMBRE_INSTITUCION'))}\n"
+                        f"📚 {bold('Nivel Académico:')} {safe_field(d.get('NIVEL_ACADEMICO'))}\n"
+                        f"🎓 {bold('Grado/Título:')} {safe_field(d.get('GRADO_TITULO'))}\n"
+                        f"📅 {bold('Fecha del Diploma:')} {safe_field(d.get('FECHA_DIPLOMA'))}\n"
+                        f"🗓️ {bold('Año de Emisión:')} {safe_field(d.get('ANIO_EMISION'))}\n"
+                    )
+
+                    await update.message.reply_text(
+                        mensaje, parse_mode="HTML", reply_to_message_id=update.message.message_id
+                    )
+            else:
+                await update.message.reply_text(
+                    f"{EMOJIS['error']} No se encontraron resultados para {dni}.", parse_mode="HTML", reply_to_message_id=update.message.message_id
+                )
+        else:
+            mensaje = f"{EMOJIS['error']} No se encontraron datos para ese DNI."
+            await update.message.reply_text(
+                mensaje, parse_mode="HTML", reply_to_message_id=update.message.message_id
+            )
+
+    except Exception as e:
+        mensaje = f"{EMOJIS['error']} Error de conexión: {e}"
+        await update.message.reply_text(
+            mensaje, parse_mode="HTML", reply_to_message_id=update.message.message_id
+        )
+
+    await loading_message.delete()
+
+# Handler (comentado para no activar)
+# aplication.add_handler(CommandHandler("sunedu", sunedu))
