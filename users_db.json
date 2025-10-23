@@ -1,0 +1,148 @@
+{
+  "users": {
+    "6251510385": {
+      "username": "WinniePoohOFC",
+      "first_name": "彡[ᴡɪɴɴɪᴇ ᴘᴏᴏʜ]彡",
+      "last_name": "",
+      "credits": "♾️",
+      "role": "admin",
+      "plan": "Premium",
+      "registered_at": "2025-10-22 00:09:25",
+      "audit_log": [],
+      "consultas": 0,
+      "consultas_hoy": 0,
+      "consultas_hoy_fecha": "2025-10-22"
+    },
+    "6862902399": {
+      "username": "zGatoO",
+      "first_name": "╰[•]╯╰乙Ꮆ卂ㄒㄖㄖ╯╰∆╯",
+      "last_name": "",
+      "credits": 71.0,
+      "role": "user",
+      "plan": "Free",
+      "registered_at": "2025-10-22 00:20:10",
+      "audit_log": [
+        {
+          "timestamp": "2025-10-22T00:20:15.306785",
+          "tipo": "telp",
+          "motivo": "Consumo por telp",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-22T14:55:09.511396",
+          "tipo": "reniec_dni",
+          "motivo": "Consumo por reniec_dni",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-22T14:55:43.172783",
+          "tipo": "reniec_dni",
+          "motivo": "Consumo por reniec_dni",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-22T14:56:16.077102",
+          "tipo": "reniec_dni",
+          "motivo": "Consumo por reniec_dni",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-22T17:02:02.253341",
+          "tipo": "telp",
+          "motivo": "Consumo por telp",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-23T11:05:13.645190",
+          "tipo": "reniec_dni",
+          "motivo": "Consumo por reniec_dni",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-23T11:06:37.296128",
+          "tipo": "telefonia_menu",
+          "motivo": "Consumo por telefonia_menu",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-23T11:09:32.263124",
+          "tipo": "telefonia_menu",
+          "motivo": "Consumo por telefonia_menu",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-23T11:10:42.246442",
+          "tipo": "telefonia_menu",
+          "motivo": "Consumo por telefonia_menu",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-23T12:05:27.108987",
+          "tipo": "admin_add",
+          "motivo": "Créditos añadidos por admin 彡[ᴡɪɴɴɪᴇ ᴘᴏᴏʜ]彡",
+          "cantidad": 70
+        }
+      ],
+      "consultas": 0,
+      "consultas_hoy": 0,
+      "consultas_hoy_fecha": "2025-10-22"
+    },
+    "7953492232": {
+      "username": "choco_tete",
+      "first_name": "匚卄ㄖ匚ㄖㄒ乇ㄒ乇",
+      "last_name": "",
+      "credits": 0,
+      "role": "user",
+      "plan": "Free",
+      "registered_at": "2025-10-22 00:50:53",
+      "audit_log": [
+        {
+          "timestamp": "2025-10-22T00:51:08.292434",
+          "tipo": "accion",
+          "motivo": "",
+          "cantidad": 2000
+        },
+        {
+          "timestamp": "2025-10-23T10:51:55.625132",
+          "tipo": "reniec_dni",
+          "motivo": "Consumo por reniec_dni",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-23T10:52:24.893027",
+          "tipo": "reniec_dni",
+          "motivo": "Consumo por reniec_dni",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-23T11:27:55.731926",
+          "tipo": "reniec_dni",
+          "motivo": "Consumo por reniec_dni",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-23T12:28:01.689622",
+          "tipo": "reniec_dni",
+          "motivo": "Consumo por reniec_dni",
+          "cantidad": -1
+        },
+        {
+          "timestamp": "2025-10-23T12:28:22.988926",
+          "tipo": "reniec_dni",
+          "motivo": "Consumo por reniec_dni",
+          "cantidad": -1
+        }
+      ],
+      "consultas": 0,
+      "consultas_hoy": 0,
+      "consultas_hoy_fecha": "2025-10-22"
+    }
+  },
+  "groups": {
+    "-1002837066059": {
+      "chat_id": -1002837066059,
+      "plan": "Free",
+      "added_at": "2025-10-22 00:09:54"
+    }
+  }
+}

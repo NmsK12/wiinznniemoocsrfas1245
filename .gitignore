@@ -20,9 +20,6 @@ wheels/
 .installed.cfg
 *.egg
 
-# Base de datos local (NO subir datos de usuarios)
-users_db.json
-
 # Archivos de entorno
 .env
 .venv
